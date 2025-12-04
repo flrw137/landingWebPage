@@ -34,3 +34,21 @@ window.addEventListener('DOMContentLoaded',()=>{
         lightDark(isLight ? 'dark' : 'light');
     })
 })
+const downloadButton=document.getElementById("download");
+downloadButton.addEventListener("click", ()=>{
+    const link = document.createElement("a");
+    window.open( "https://itp.uni-frankfurt.de/~osorio/pdf/CVshort_AlejandroC0.pdf", "_blank");      
+    link.click();
+});
+const sr=ScrollReveal({
+     origin:'top',
+     distance:'60px',
+     duration:2500,
+     delay:400,
+})
+sr.reveal('.home__content');
+sr.reveal('.blackhole-wrapper',{delay:500});        
+sr.reveal('.light-wrapper',{delay:500});  
+// sr.reveal('.education-container,.experience-container',{interval:100});
+sr.reveal('.education-container',{origin:'left'});
+sr.reveal('.experience-container',{origin:'right'});  
