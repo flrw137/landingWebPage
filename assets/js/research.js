@@ -9,13 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const target = btn.dataset.target;
 
-      // quitar active a todos
       buttons.forEach(b => b.classList.remove('new-active'));
 
-      // activar el clickeado
+     
       btn.classList.add('new-active');
 
-      // filtrar grupos
+     
       group.forEach(g => {
         if (target === 'all') {
           g.classList.remove('hidden_new');
@@ -64,6 +63,18 @@ const navMenu=document.getElementById('nav-menu'),
     if(navClose){
     navClose.addEventListener('click',()=>{
         navMenu.classList.remove('show-menu');  
-        
+
     })
  }
+
+ const srp=ScrollReveal({
+     origin:'top',
+     distance:'60px',
+     duration:2500,
+     delay:400,
+     }
+   )
+srp.reveal('.buttons_news',{origin:'bottom'})
+srp.reveal('.news_title-container',{origin:'bottom'});
+srp.reveal('.featured',{delay:500}); 
+srp.reveal('.achievement-item',{delay:500}); 
