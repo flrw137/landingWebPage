@@ -1,17 +1,20 @@
 window.addEventListener('DOMContentLoaded',()=>{
-  const toggleBtnp = document.getElementById('theme-toggle')
+  const toggleBtnp = document.getElementById('theme-toggle');
+  const logo= document.querySelector('.nav-icon');
   const lightDarkp=(theme)=>{
         if (theme=='light'){
             document.body.classList.add('light-theme');
             toggleBtnp.classList.remove('ri-sun-line');
             toggleBtnp.classList.add('ri-moon-line');
             localStorage.setItem('theme', 'light');
+            logo.src='../assets/img/logo.png'
         }
         else{
             document.body.classList.remove('light-theme');
             toggleBtnp.classList.add('ri-sun-line');
             toggleBtnp.classList.remove('ri-moon-line');
             localStorage.setItem('theme', 'dark');
+            logo.src='../assets/img/logo2.png'
         }
     };
    const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -22,28 +25,6 @@ window.addEventListener('DOMContentLoaded',()=>{
     });
 })
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   const path = window.location.pathname;
-
-//   document.querySelectorAll('.has-submenu-2').forEach(item => {
-//     const section = item.dataset.section;
-//     const subMenu = item.querySelector('.sub_menu-wrap-2');
-//     if (path.includes(section)) {
-//       item.classList.add('active');
-//       subMenu.classList.add('open-menu');
-//     }
-
-//     item.addEventListener('mouseenter', () => {
-//       subMenu.classList.add('open-menu');
-//     });
-
-//     item.addEventListener('mouseleave', () => {
-//       if (!item.classList.contains('active')) {
-//         subMenu.classList.remove('open-menu');
-//       }
-//     });
-//   });
-// }); 
 
 const srp=ScrollReveal({
      origin:'top',
@@ -83,7 +64,7 @@ const navMenu=document.getElementById('nav-menu'),
         navMenu.classList.remove('show-menu');  
     })
  }
-
+console.log('test')
 srp.reveal('.title_container-gr',{origin:'bottom'});
 // srp.reveal('.visiting',{origin:'bottom'})
 srp.reveal('.students',{origin:'bottom'})

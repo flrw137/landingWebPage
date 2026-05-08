@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!tgl) return;
 
   const buttons = tgl.querySelectorAll('.button-item');
-  const group = document.querySelectorAll('.new-container');
+  const group = document.querySelectorAll('.new-item');
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -30,18 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 window.addEventListener('DOMContentLoaded',()=>{
   const toggleBtnp = document.getElementById('theme-toggle')
+   const logo= document.querySelector('.nav-icon')
   const lightDarkp=(theme)=>{
         if (theme=='light'){
             document.body.classList.add('light-theme');
             toggleBtnp.classList.remove('ri-sun-line');
             toggleBtnp.classList.add('ri-moon-line');
             localStorage.setItem('theme', 'light');
+            logo.src='../assets/img/logo.png'
         }
         else{
             document.body.classList.remove('light-theme');
             toggleBtnp.classList.add('ri-sun-line');
             toggleBtnp.classList.remove('ri-moon-line');
             localStorage.setItem('theme', 'dark');
+            logo.src='../assets/img/logo2.png'
         }
     };
    const savedTheme = localStorage.getItem('theme') || 'dark';

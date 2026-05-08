@@ -396,15 +396,7 @@ img {
    text-decoration: none;
    color:var(--title-color);
 }
-/* .nav-logo{
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--h3-font-size);
-  font-weight: var(--weight-500);
-  align-items: center;
-  gap: 8px;
 
-} */
 
 .nav-icon {
   width: 80px;   
@@ -412,10 +404,7 @@ img {
   padding: 5px;
   margin: 5px;
 }
-/* .nav-menu {
-    margin-left: auto;
-   
-} */
+
 .nav-list{
     column-gap: 2.75rem;
     text-decoration: none;
@@ -484,8 +473,7 @@ img {
     box-shadow: (0,4px hsla(30, 8%, 85%, 0.071));    
 } 
 .light-theme {
-  /* --first-color:  #CFB53B;
-  --second-color: #cfb43bc8; */
+
   --title-color: hsl(0,8%,16%);
   --text-color: hsl(0,8%,28%);
   --body-color:oklch(0.99 0.005 80);
@@ -568,8 +556,6 @@ img {
     font-weight:var(--weight-400) ;
 }
 .pub_title-container{
-   /* max-width:1260px;
-   margin-inline:auto; */
    padding-inline:1.25rem;
    margin-bottom: 50px;
 }
@@ -603,18 +589,10 @@ img {
  }
 
  .show_all{
-  /* background-color: var(--box-color-2);
-  color: var(--first-color);
-  padding: 10px;
-  border: none;
-  border-radius: .5rem;
-  cursor: pointer; */
+
   display:none;
  }
- /* .show_all:hover{
-  background-color: var(--box-color);
 
- } */
  .article-sub{
   color: var(--first-color);
  }
@@ -687,6 +665,9 @@ img {
 .thesis_work{
   text-decoration: none;
   color: var(--text-color);
+  min-width: 0; 
+  width: 100%;
+  line-height: 1.4;
 }
 .visiting,
 .students,
@@ -730,6 +711,11 @@ img {
   display: flex;
   gap: 12px;
  }
+.date{
+ display: block;
+}
+
+
  .research_member,
 .research_member-2,
 .research_member-v{
@@ -919,19 +905,7 @@ img {
   gap: 1.75rem;
  
 }
-/* .contact_form{
-   row-gap: 2rem;
-   background-color: var(--body-color);
-   padding-left: 30px;
-   border: solid var(--border-color) 1px;
-    border-bottom-right-radius: .5rem;
-    border-top-right-radius: .5rem;
-  border-bottom-right-radius: .5rem;
-   padding-top: 30px;
-   max-height: 100%;
-   overflow-y: auto;
-   min-height: 0;
-} */
+
 .contact_form-div,
 .room-data,
 .info_item{
@@ -1266,14 +1240,14 @@ h2 {
   font-size: var(--small-font-size);
 }
 
-.news-container {
+.main_new-container {
   display: flex;
-   display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   padding: 3rem 1rem;
   background: var(--body-color);
   font-family: var(--body-font);
+
+  
 }
 .new-container{
    width: 100%;
@@ -1282,6 +1256,7 @@ h2 {
 .news-card {
   max-width: 800px;
   background: var(--container-color);
+  width: 100%;
   padding: 2.5rem;
   border-radius: var(--radius);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -1416,4 +1391,35 @@ h2 {
 .youtube-btn:hover {
   background: #cc0000;
 }
+.img-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
+}
+.b-hole{
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+ 
+}
+.image-caption{
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+}
+
+.Thesis{
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap:2rem; 
+  /* justify-content: space-between; */
+  align-items: start;
+  /* line-height: 1.5;
+  max-width: 100%;  */
+
+
+}
+.date_f{
+  max-height: 15px;
+}

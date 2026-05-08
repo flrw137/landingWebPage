@@ -1,20 +1,50 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const tgl = document.querySelector('.button_toggle');
+  if (!tgl) return;
+
+  const buttons = tgl.querySelectorAll('.button-item');
+  const group = document.querySelectorAll('.new-item');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+
+      buttons.forEach(b => b.classList.remove('new-active'));
+
+     
+      btn.classList.add('new-active');
+
+     
+      group.forEach(g => {
+        if (target === 'all') {
+          g.classList.remove('hidden_new');
+        } else {
+          g.classList.toggle(
+            'hidden_new',
+            g.dataset.group !== target
+          );
+        }
+      });
+    });
+  });
+});
 window.addEventListener('DOMContentLoaded',()=>{
   const toggleBtnp = document.getElementById('theme-toggle')
-  const logo= document.querySelector('.nav-icon');
+   const logo= document.querySelector('.nav-icon')
   const lightDarkp=(theme)=>{
         if (theme=='light'){
             document.body.classList.add('light-theme');
             toggleBtnp.classList.remove('ri-sun-line');
             toggleBtnp.classList.add('ri-moon-line');
             localStorage.setItem('theme', 'light');
-            logo.src='../assets/img/logo.png'
+            logo.src='../../assets/img/logo.png'
         }
         else{
             document.body.classList.remove('light-theme');
             toggleBtnp.classList.add('ri-sun-line');
             toggleBtnp.classList.remove('ri-moon-line');
             localStorage.setItem('theme', 'dark');
-            logo.src='../assets/img/logo2.png'
+            logo.src='../../assets/img/logo2.png'
         }
     };
    const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -24,27 +54,18 @@ window.addEventListener('DOMContentLoaded',()=>{
         lightDarkp(isLight ? 'dark' : 'light');
     });
 })
-
-// });
-const srp=ScrollReveal({
-     origin:'top',
-     distance:'60px',
-     duration:2500,
-     delay:400,
-     }
-   )
 const navMenu=document.getElementById('nav-menu'),
  navToggle=document.getElementById('nav-toggle'),
  navClose=document.getElementById('nav-close');
  if(navToggle){
     navToggle.addEventListener('click',()=>{
         navMenu.classList.add('show-menu');
+        
     })
  }
-  if(navClose){
+    if(navClose){
     navClose.addEventListener('click',()=>{
         navMenu.classList.remove('show-menu');  
+
     })
  }
-srp.reveal('.title_container-curriculum ',{origin:'bottom'}  )
- srp.reveal('.pdf-container')
